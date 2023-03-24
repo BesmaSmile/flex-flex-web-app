@@ -1,0 +1,19 @@
+.search {
+  .input-group {
+    .input-group-text {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+      border-color: #ced4da;
+
+      .bi-search {
+        color: #dc3545;
+        ;
+      }
+    }
+  }
+
+  #movies .title {
+    align-self: flex-start;
+  }
+
+}

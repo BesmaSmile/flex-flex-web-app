@@ -1,0 +1,15 @@
+.tabs {
+  .nav-item {
+    border: none;
+    outline: none;
+  }
+
+  .nav-link {
+    color: #495057;
+  }
+
+  .nav-link.active {
+    color: #dc3545;
+    font-weight: 500;
+  }
+}
