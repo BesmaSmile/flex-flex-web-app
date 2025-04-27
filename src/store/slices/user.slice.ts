@@ -45,7 +45,7 @@ export const createUserSlice: StateCreator<
             }
           }));
         }
-      } catch (error) {
+      } catch (error: any) {
         set(() => ({
           user: {
             data: initialState.user.data,
@@ -74,7 +74,7 @@ export const createUserSlice: StateCreator<
             }
           }));
         }
-      } catch (error) {
+      } catch (error: any) {
         set(() => ({
           user: {
             data: initialState.user.data,
@@ -108,7 +108,7 @@ export const createUserSlice: StateCreator<
             }
           }));
         }
-      } catch (error) {
+      } catch (error: any) {
         set(() => ({
           user: {
             data: initialState.user.data,
