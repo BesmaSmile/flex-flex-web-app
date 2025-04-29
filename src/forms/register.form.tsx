@@ -10,12 +10,11 @@ import Link from "next/link";
 import { useStore } from "@/store";
 
 function RegisterForm() {
-  const { register:reg } = useStore();
+  const { register: reg } = useStore();
   const {
     register,
     handleSubmit,
     formState: { errors },
-    setError,
   } = useForm<RegisterType>({
     resolver: zodResolver(RegisterSchema),
   });

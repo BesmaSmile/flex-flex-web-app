@@ -11,7 +11,7 @@ function Home() {
   useEffect(() => {
     getUpcomingMovies(1);
     loadMorePopularMovies();
-  }, []);
+  }, [getUpcomingMovies, loadMorePopularMovies]);
   return (
     <div className="home">
       <Hero />

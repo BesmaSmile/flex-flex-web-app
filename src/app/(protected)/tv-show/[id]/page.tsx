@@ -14,7 +14,7 @@ function TvShow({ params }: {
 
   useEffect(() => {
     getTvShowsDetails(id);
-  }, []);
+  }, [getTvShowsDetails, id]);
   return (
     <div className="tv-show">
       {loading && <ArticleDetailsShimmer />}

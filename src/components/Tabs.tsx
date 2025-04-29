@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 
-export function Tab({ id, label, children }: { id: string, label: string, children: React.ReactNode }) {
+export function Tab({ id, children }: { id: string, label: string, children: React.ReactNode }) {
   return (
     <div id={id}>
       {children}

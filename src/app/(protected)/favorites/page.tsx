@@ -13,7 +13,7 @@ function Favorites() {
 
   useEffect(() => {
     getFavorites();
-  }, []);
+  }, [getFavorites]);
 
   const [selectedMoviesPage, setSelectedMoviesPage] = useState(1);
   const [selectedTvShowsPage, setSelectedTvShowsPage] = useState(1);

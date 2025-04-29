@@ -18,7 +18,7 @@ export default function AuthRedirect({
     if (isAuthenticated) {
       router.replace("/");
     }
-  }, [isAuthenticated, hasHydrated]);
+  }, [isAuthenticated, hasHydrated, router]);
 
   if (isAuthenticated) {
     return null

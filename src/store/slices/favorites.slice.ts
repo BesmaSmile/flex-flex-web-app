@@ -1,5 +1,5 @@
 import { StateCreator } from "zustand"
-import { AppSlice, FavoritesSlice, MoviesSlice, UserSlice } from "@/store/types"
+import { AppSlice, FavoritesSlice } from "@/store/types"
 import api from "@/services/api";
 
 const initialState = {
@@ -13,7 +13,7 @@ const initialState = {
 }
 export const createFavoritesSlice: StateCreator<
   AppSlice,
-  [['zustand/devtools', never]],
+  [['zustand/devtools', any]],
   [],
   FavoritesSlice
 > =

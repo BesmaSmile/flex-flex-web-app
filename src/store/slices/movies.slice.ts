@@ -1,7 +1,6 @@
 import { StateCreator } from "zustand"
-import { AppSlice, MoviesSlice, UserSlice } from "@/store/types"
+import { AppSlice, MoviesSlice } from "@/store/types"
 import api from "@/services/api";
-import { LoginType, RegisterType } from "@/types";
 
 const initialState = {
   infinitePopularMovies: {

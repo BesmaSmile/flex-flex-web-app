@@ -1,5 +1,5 @@
 import { StateCreator } from "zustand"
-import { AppSlice, MoviesSlice, TvShowsSlice, UserSlice } from "@/store/types"
+import { AppSlice, TvShowsSlice } from "@/store/types"
 import api from "@/services/api";
 
 const initialState = {

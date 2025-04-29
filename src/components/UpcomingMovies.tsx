@@ -14,7 +14,7 @@ function UpcomingMovies() {
 
   useEffect(() => {
     getUpcomingMovies(1);
-  }, []);
+  }, [getUpcomingMovies]);
 
   return (
     (loading || error) ? (

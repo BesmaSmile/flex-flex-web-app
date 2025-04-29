@@ -4,7 +4,9 @@ const getToken = () => {
   return useStore.getState().auth.token;
 };
 
-export default {
+const tokenHandler = {
   getToken,
-}
+};
+
+export default tokenHandler;
 

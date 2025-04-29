@@ -1,6 +1,5 @@
 "use client";
 import React, { useState, useEffect, useCallback } from 'react';
-
 import {
   Tabs, InfiniteScroll, ArticleCardShimmers, ArticleCard,
   Tab,
@@ -30,18 +29,18 @@ function Search() {
     searchNavigate("/search", { query: searchText });
   };
 
-  const search = (forceNewSearch: boolean = false) => {
+  const search = useCallback((forceNewSearch: boolean = false) => {
     if (searchText.length > 0) {
       searchMovies(searchText ?? "", forceNewSearch);
       searchTvShows(searchText ?? "", forceNewSearch);
     }
-  };
+  }, [searchText, searchMovies, searchTvShows]);
 
   useEffect(() => {
     if ((query?.length ?? 0) > 0) {
       search(true);
     }
-  }, [query]);
+  }, [query, search]);
 
   return (
     <div className="flex flex-col items-center my-10">

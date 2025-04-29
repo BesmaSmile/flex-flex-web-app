@@ -8,14 +8,14 @@ function Movie({ params }: {
   params: Promise<{ id: number }>
 }) {
   const { id } = use(params)
-  console.log('id', id);
+
   const movieDetails = useStore((state) => state.movieDetails);
   const getMovieDetails = useStore((state) => state.getMovieDetails);
   const { data, loading, error } = movieDetails;
 
   useEffect(() => {
     getMovieDetails(id);
-  }, []);
+  }, [getMovieDetails, id]);
   return (
     <div className="movie">
       {loading && <ArticleDetailsShimmer />}

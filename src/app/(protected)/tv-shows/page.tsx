@@ -1,10 +1,8 @@
 "use client";
 import React, { useEffect } from 'react';
-
 import { PaginatedList, ArticleCardShimmers, ArticleCard } from '@/components';
-
-
 import { useStore } from '@/store';
+
 
 function TvShows() {
   const tvShows = useStore((state) => state.popularTvShows);
@@ -12,7 +10,7 @@ function TvShows() {
 
   useEffect(() => {
     getPopularTvShows(1);
-  }, []);
+  }, [getPopularTvShows]);
 
   return (
     <div className="mt-5">

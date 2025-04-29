@@ -4,7 +4,7 @@ import { useStore } from '@/store';
 
 function PopularMovies({ loadMorePopularMovies }: { loadMorePopularMovies: () => void }) {
   const infinitePopularMovies = useStore((state) => state.infinitePopularMovies);
-  console.log('infinitePopularMovies', infinitePopularMovies);
+
   return (
     <div className="popular-movies">
 

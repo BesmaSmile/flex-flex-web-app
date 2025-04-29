@@ -7,7 +7,6 @@ import VideoPlayer from './VideoPlayer';
 import cinema from '@/assets/img/cinema.png';
 import cinemaWhite from '@/assets/img/cinema-white.png';
 import Image from 'next/image';
-import clsx from 'clsx';
 
 type ArticleDetailsProps = {
   article: {

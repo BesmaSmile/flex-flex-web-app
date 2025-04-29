@@ -16,7 +16,7 @@ const initialState = {
 }
 export const createUserSlice: StateCreator<
   AppSlice,
-  [['zustand/devtools', never]],
+  [['zustand/devtools', any]],
   [],
   UserSlice
 > =

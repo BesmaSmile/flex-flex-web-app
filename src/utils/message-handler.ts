@@ -16,4 +16,6 @@ const showSuccessMessage = (message: string) => {
   });
 };
 
-export default { showErrorMessage, showSuccessMessage };
+const messageHandler = { showErrorMessage, showSuccessMessage };
+
+export default messageHandler;

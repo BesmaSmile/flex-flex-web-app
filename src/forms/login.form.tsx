@@ -8,7 +8,6 @@ import { Button, FormField } from "@/components";
 import { LoginSchema } from "@/schemas";
 import logo from "@/assets/img/logo.png";
 import { useStore } from "@/store";
-import { stat } from "fs";
 
 function LoginForm() {
   const login = useStore((state) => state.login);
@@ -17,7 +16,6 @@ function LoginForm() {
     register,
     handleSubmit,
     formState: { errors },
-    setError,
   } = useForm<LoginType>({
     resolver: zodResolver(LoginSchema),
   });

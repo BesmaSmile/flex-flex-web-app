@@ -6,13 +6,14 @@ import { PaginatedList, ArticleCardShimmers, ArticleCard } from '@/components';
 
 import { useStore } from '@/store';
 
+
 function Movies() {
   const movies = useStore((state) => state.popularMovies);
   const getPopularMovies = useStore((state) => state.getPopularMovies);
 
   useEffect(() => {
     getPopularMovies(1);
-  }, []);
+  }, [getPopularMovies]);
 
   return (
     <div className="mt-5">

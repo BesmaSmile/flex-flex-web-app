@@ -1,7 +1,6 @@
-import { useToastNotifications } from '@/hooks';
 import { useStore } from '@/store';
 import clsx from 'clsx';
-import React, { MouseEventHandler, useEffect } from 'react';
+import React from 'react';
 
 type FavoriteButtonProps = {
   article: {

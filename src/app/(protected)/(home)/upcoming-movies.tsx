@@ -5,7 +5,7 @@ import { useStore } from '@/store';
 
 function UpcomingMovies() {
   const upcomingMovies = useStore((state) => state.upcomingMovies);
-  console.log('upcomingMovies', upcomingMovies);
+
   const { data, loading, error } = upcomingMovies;
   return (
     <div className="upcoming-movies mb-10">

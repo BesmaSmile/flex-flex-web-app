@@ -26,12 +26,12 @@ export default function AuthGuard({
       router.replace("/login");
     }
     getProfile();
-  }, [hasHydrated, isAuthenticated]);
+  }, [hasHydrated, isAuthenticated, router, getProfile]);
 
   useEffect(() => {
     if (!isAuthenticated) return;
     getFavorites();
-  }, [isAuthenticated]);
+  }, [isAuthenticated, getFavorites]);
 
   if (!isAuthenticated) {
     return null

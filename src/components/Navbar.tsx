@@ -20,6 +20,7 @@ function Navbar() {
 
   const mode = pathname === '/' ? 'dark' : 'light';
 
+  const isCurrentPath = useCallback((path: string) => path === pathname, [pathname]);
   if (!isAuthenticated) return null;
 
   const paths = [
@@ -30,7 +31,7 @@ function Navbar() {
     { path: '/search', name: 'Search' },
   ];
 
-  const isCurrentPath = useCallback((path: string) => path === pathname, [pathname]);
+
 
   return (
     <div className={clsx(
