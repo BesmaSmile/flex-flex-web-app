@@ -11,8 +11,8 @@ export type ButtonProps = {
 }
 
 const Button = ({
-  label, type="button", onClick, disabled = false, className = "", variant = "primary", fullWidth = false }: ButtonProps) => {
-  const baseStyles = "px-4 py-2 rounded font-bold";
+  label, type = "button", onClick, disabled = false, className = "", variant = "primary", fullWidth = false }: ButtonProps) => {
+  const baseStyles = "px-4 py-2 rounded font-bold cursor-pointer";
   const variantStyles = {
     primary: "bg-rose-500 text-white hover:bg-rose-700",
     secondary: "bg-gray-500 text-white hover:bg-gray-700",
@@ -24,7 +24,7 @@ const Button = ({
   return (
     <button
       className={clsx(
-        baseStyles,variantStyles[variant], fullWidthStyles, disabledStyles, className
+        baseStyles, variantStyles[variant], fullWidthStyles, disabledStyles, className
       )}
       onClick={onClick}
       disabled={disabled}
