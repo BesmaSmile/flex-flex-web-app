@@ -9,8 +9,6 @@ export default function AuthRedirect({
   children: React.ReactNode;
 }>) {
   const router = useRouter();
-  const state = useStore((state) => state);
-  console.log(state)
   const isAuthenticated = useStore((state) => state.auth.isAuthenticated);
   const hasHydrated = useStore((state) => state.hasHydrated);
   useEffect(() => {

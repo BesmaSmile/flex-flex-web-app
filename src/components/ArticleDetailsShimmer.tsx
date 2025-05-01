@@ -2,34 +2,37 @@ import React from 'react';
 import RatingStars from './RatingStars';
 function ArticleDetailsShimmer() {
   return (
-    <div className="p-5 d-flex flex-row">
-      <div className="me-4">
-        <div className="w-[270px] h-[405px] rounded-[10px] bg-gradient-to-r from-[#828181] via-[#999898] to-[#828181] bg-[length:200%] animate-shimmer" />
-      </div>
-      <div className="col">
-        <div className="d-flex flex-row justify-content-between">
+    <div className="flex flex-row gap-4 p-5">
+      {/* Image shimmer */}
+      <div className="w-32 h-40 rounded-md animated light" />
 
-          <div className="w-[400px] h-[30px] rounded-[10px] bg-gradient-to-r from-[#afaaaa] via-[#dddddd] to-[#afaaaa] bg-[length:200%] animate-shimmer" />
-          <i className="text-[25px] text-[#999898] bi bi-heart" />
-
+      <div className="flex-1 space-y-4">
+        {/* Title + Heart icon */}
+        <div className="flex justify-between items-center">
+          <div className="w-1/2 h-6 rounded-md animated dark" />
+          <i className="bi bi-heart text-gray-400 text-xl" />
         </div>
-        <div className="w-[80px] h-[7px] rounded-[3px] my-[10px] bg-gradient-to-r from-[#afaaaa] via-[#dddddd] to-[#afaaaa] bg-[length:200%] animate-shimmer" />
+
+        {/* Date */}
+        <div className="w-32 h-4 rounded-md animated light" />
+
         <RatingStars value={0} />
+
+        {/* Subtitles + Paragraphs */}
         {[0, 1, 2].map((e) => (
-          <div key={e} className="mt-5">
-            <div className="w-[100px] h-[15px] rounded-[5px] mb-[10px] bg-gradient-to-r from-[#afaaaa] via-[#dddddd] to-[#afaaaa] bg-[length:200%] animate-shimmer" />
-            <div className="w-[70%]">
-              <p className="w-[80%] h-[7px] rounded-[3px] my-[4px] bg-gradient-to-r from-[#afaaaa] via-[#dddddd] to-[#afaaaa] bg-[length:200%] animate-shimmer" />
-              <p className="h-[7px] rounded-[3px] my-[4px] bg-gradient-to-r from-[#afaaaa] via-[#dddddd] to-[#afaaaa] bg-[length:200%] animate-shimmer" />
-              <p className="h-[7px] rounded-[3px] my-[4px] bg-gradient-to-r from-[#afaaaa] via-[#dddddd] to-[#afaaaa] bg-[length:200%] animate-shimmer" />
+          <div key={e} className="mt-5 space-y-2">
+            <div className="w-1/3 h-5 rounded-md animated dark" />
+            <div className="space-y-1">
+              <p className="h-4 w-full rounded-md animated light" />
+              <p className="h-4 w-5/6 rounded-md animated light" />
+              <p className="h-4 w-2/3 rounded-md animated light" />
             </div>
           </div>
         ))}
-
       </div>
-
     </div>
   );
 }
+
 
 export default ArticleDetailsShimmer;

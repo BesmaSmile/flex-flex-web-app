@@ -10,7 +10,6 @@ const useToastNotifications = ({ success, error }: { success?: string | null; er
   }, [error])
 
   useEffect(() => {
-    console.log('success', success)
     if (success) {
       messageHandler.showSuccessMessage(success)
     }
