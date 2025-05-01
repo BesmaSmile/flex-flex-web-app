@@ -6,6 +6,7 @@ const nextConfig: NextConfig = {
   images: {
     remotePatterns: [new URL('https://image.tmdb.org/t/p/w500/**')],
   },
+  output: "standalone",
 };
 
 export default nextConfig;

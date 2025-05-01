@@ -1,8 +1,42 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Flix Flex 🎬
 
-## Getting Started
+Flix Flex is a modern [Next.js](https://nextjs.org) application bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app), built for exploring movie content in a clean, flexible UI.
 
-First, run the development server:
+## 🔗 Demo
+
+👉 [Live Demo](https://flex-flex-web-app.vercel.app)
+
+## 🧩 Related Project
+
+👉 This frontend app connects to the [Flix Flex API (Backend)](https://github.com/BesmaSmile/flix-flex-api)
+
+
+## 🚀 Getting Started Locally
+
+To run the app locally, follow these steps:
+
+1. **Install dependencies**:
+
+```bash
+npm install
+# or
+yarn install
+```
+
+2. **Create an `.env` file** based on `.env.example`:
+
+```bash
+cp .env.example .env
+```
+
+3. **Edit the `.env` file** and make sure it contains:
+
+```
+NEXT_PUBLIC_API_URL=https://flix-flex-api-production.up.railway.app/api
+NEXT_PUBLIC_IMG_URL=https://image.tmdb.org/t/p/w500
+```
+
+4. **Start the development server**:
 
 ```bash
 npm run dev
@@ -14,23 +48,54 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🐳 Run with Docker
 
-## Learn More
+To run the app using Docker:
 
-To learn more about Next.js, take a look at the following resources:
+1. **Build the Docker image**:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+docker build -t flix-flex .
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+2. **Run the container**:
 
-## Deploy on Vercel
+```bash
+docker run -p 3000:3000 flix-flex
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Then visit: [http://localhost:3000](http://localhost:3000)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+> Make sure port `3000` is available and not used by another app.
+
+---
+
+## 📦 Docker Hub Image
+
+You can also pull and run the pre-built image directly from Docker Hub:
+
+```bash
+docker pull besmarabiacherif/flix-flex:nextJs
+docker run -p 3000:3000 besma/flix-flex:nextJs
+```
+
+🔗 [View on Docker Hub](https://hub.docker.com/r/besmarabiacherif/flix-flex)
+
+---
+
+## 📚 Learn More
+
+To learn more about Next.js, check out:
+
+- [Next.js Documentation](https://nextjs.org/docs)
+- [Learn Next.js](https://nextjs.org/learn)
+- [Next.js GitHub Repository](https://github.com/vercel/next.js)
+
+---
+
+## 🧾 License
+
+This project is licensed under the [MIT License](LICENSE).
