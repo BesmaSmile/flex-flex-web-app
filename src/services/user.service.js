@@ -20,7 +20,7 @@ const userService = (api) => {
         throw new Error('Unknown error. Failed to sign up !');
       }
     });
-  const getUserInfo = () => api.get('/user/info');
+  const getUserInfo = () => api.get('/user/me');
   return { login, register, getUserInfo };
 };
 export default userService;
