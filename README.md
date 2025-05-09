@@ -5,6 +5,7 @@ Flix Flex is a modern [Next.js](https://nextjs.org) application bootstrapped wit
 ## 🔗 Demo
 
 👉 [Live Demo](https://flex-flex-web-app.vercel.app)
+(Username: bessouma - Password: bessouma)
 
 ## 🧩 Related Project
 
