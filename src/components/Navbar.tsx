@@ -69,7 +69,7 @@ function Navbar() {
       <div className="flex justify-end items-center gap-2">
         <div className="mx-[10px] w-fit flex-none text-[14px]">
           <h5 className="mb-0">
-            {user?.firstname} {user?.lastname}
+            {user?.firstName} {user?.lastName}
           </h5>
         </div>
 
