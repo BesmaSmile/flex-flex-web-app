@@ -4,7 +4,7 @@ import { LoginType, RegisterType } from "@/types";
 
 const userService = (api: AxiosInstance) => {
 
-  const login = (data: LoginType) => api.post('user/login', data)
+  const login = (data: LoginType) => api.post('auth/login', data)
     .catch((error) => {
       throw String(error.response.data.message);
     });

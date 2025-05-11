@@ -31,7 +31,7 @@ export const createFavoritesSlice: StateCreator<
 
       try {
         const response = await api.favoritesService.addToFavorites(article);
-        if (response.status === 200) {
+        if (response.status === 201) {
           set(() => ({
             favorites: {
               ...favorites,
@@ -60,7 +60,7 @@ export const createFavoritesSlice: StateCreator<
       }));
       try {
         const response = await api.favoritesService.removeFromFavorites(id, category);
-        if (response.status === 200) {
+        if (response.status === 201) {
           set(() => ({
             favorites: {
               ...favorites,

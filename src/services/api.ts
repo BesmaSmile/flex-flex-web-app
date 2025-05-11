@@ -21,10 +21,28 @@ const create = (baseURL = apiConfig.apiUrl) => {
     const token = tokenHandler.getToken();
     const conf = confi;
     if (token) {
-      conf.headers.Authorization = token;
+      conf.headers.Authorization = `Bearer ${token}`;
     }
     return conf;
   });
+
+  api.interceptors.response.use(
+    (response) => response,
+    async (error) => {
+      const originalRequest = error.config;
+
+      const loginUrls = /(auth\/)(\/login)/g;
+
+      if (
+        error.response.status === 401
+        && !originalRequest._retry
+        && !loginUrls.test(originalRequest.url)
+      ) {
+        tokenHandler.removeToken()
+      }
+      return Promise.reject(error);
+    },
+  );
 
   return {
     userService: userService(api),

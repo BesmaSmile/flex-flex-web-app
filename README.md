@@ -1,3 +1,12 @@
+<p align="center">
+  <a href="https://nextjs.org/" target="_blank" style="display: inline-block; margin-right: 20px;">
+    <img src="https://raw.githubusercontent.com/BesmaSmile/flex-flex-web-app/refs/heads/master/public/app-name.svg" height="60" alt="Next.js N Logo" />
+  </a>
+  <a href="https://flex-flex-web-app.vercel.app/movies" target="_blank" style="display: inline-block;">
+    <img src="https://raw.githubusercontent.com/BesmaSmile/flex-flex-web-app/refs/heads/master/src/assets/img/app-name.svg" height="60" alt="App Name" />
+  </a>
+</p>
+
 # Flix Flex 🎬
 
 Flix Flex is a modern [Next.js](https://nextjs.org) application bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app), built for exploring movie content in a clean, flexible UI.
@@ -5,6 +14,7 @@ Flix Flex is a modern [Next.js](https://nextjs.org) application bootstrapped wit
 ## 🔗 Demo
 
 👉 [Live Demo](https://flex-flex-web-app.vercel.app)
+(Username: samara - Password: samara)
 
 ## 🧩 Related Project
 
@@ -95,7 +105,6 @@ To learn more about Next.js, check out:
 - [Next.js GitHub Repository](https://github.com/vercel/next.js)
 
 ---
+## 👤 Author
 
-## 🧾 License
-
-This project is licensed under the [MIT License](LICENSE).
+Made with ❤️ by [Besma RABIA CHERIF](https://www.linkedin.com/in/besmarabiacherif/).

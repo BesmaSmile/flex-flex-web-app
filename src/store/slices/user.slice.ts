@@ -32,7 +32,7 @@ export const createUserSlice: StateCreator<
       }));
       try {
         const response = await api.userService.login(payload);
-        if (response.status === 200) {
+        if (response.status === 201) {
           set(() => ({
             auth: {
               token: response.data.token,
