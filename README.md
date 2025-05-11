@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://nextjs.org/" target="_blank" style="display: inline-block; margin-right: 20px;">
-    <img src="https://raw.githubusercontent.com/BesmaSmile/flex-flex-web-app/refs/heads/master/public/app-name.svg" height="60" alt="Next.js N Logo" />
+    <img src="https://raw.githubusercontent.com/BesmaSmile/flex-flex-web-app/refs/heads/master/public/nextjsicon.svg" height="60" alt="Next.js N Logo" />
   </a>
   <a href="https://flex-flex-web-app.vercel.app/movies" target="_blank" style="display: inline-block;">
     <img src="https://raw.githubusercontent.com/BesmaSmile/flex-flex-web-app/refs/heads/master/src/assets/img/app-name.svg" height="60" alt="App Name" />
