@@ -12,6 +12,7 @@ export default function AuthGuard({
 }>) {
   const router = useRouter();
   const isAuthenticated = useStore((state) => state.auth.isAuthenticated);
+
   const getFavorites = useStore((state) => state.getFavorites);
   const hasHydrated = useStore((state) => state.hasHydrated);
   const getProfile = useStore((state) => state.getProfile);

@@ -1,7 +1,7 @@
 import { AxiosInstance } from "axios";
 
 const favoriteService = (api: AxiosInstance) => {
-  const getFavorites = () => api.get('/favorite/get_all')
+  const getFavorites = () => api.get('/favorite')
     .catch((error) => {
       switch (error.response?.status) {
         case 500:
