@@ -1,6 +1,6 @@
 import React from 'react';
 import InfiniteScrollComponent from 'react-infinite-scroll-component';
-import Error from './Error';
+
 
 type InfiniteScrollProps = {
   title?: string;

@@ -45,6 +45,7 @@ export type FavoritesSlice = {
   favorites: {
     data: any[],
     loading: boolean,
+    error?: string | null,
   },
   getFavorites: () => void,
   addToFavorites: (article: any) => void,
