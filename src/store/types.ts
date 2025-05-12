@@ -8,6 +8,7 @@ export type UserSlice = {
   user: {
     data: any,
     loading: boolean,
+    submitting: boolean,
     error?: string | null,
   }
   login: (payload: LoginType) => void,
@@ -44,8 +45,6 @@ export type FavoritesSlice = {
   favorites: {
     data: any[],
     loading: boolean,
-    error?: string | null,
-    success?: string | null,
   },
   getFavorites: () => void,
   addToFavorites: (article: any) => void,

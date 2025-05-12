@@ -3,7 +3,7 @@ import { useRouter } from 'next/navigation'
 import { useEffect } from "react";
 import { useStore } from "@/store";
 import { Navbar } from '@/components';
-import { useToastNotifications } from '@/hooks';
+import { useEventListener } from '@/hooks';
 
 export default function AuthGuard({
   children,
@@ -17,9 +17,7 @@ export default function AuthGuard({
   const hasHydrated = useStore((state) => state.hasHydrated);
   const getProfile = useStore((state) => state.getProfile);
 
-  const success = useStore((state) => state.favorites.success);
-  const error = useStore((state) => state.favorites.error);
-  useToastNotifications({ success, error })
+  useEventListener();
 
   useEffect(() => {
     if (!hasHydrated) return;

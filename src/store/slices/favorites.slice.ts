@@ -1,13 +1,13 @@
 import { StateCreator } from "zustand"
 import { AppSlice, FavoritesSlice } from "@/store/types"
 import api from "@/services/api";
+import { eventEmitter } from "@/utils";
 
 const initialState = {
   favorites: {
     data: [],
     loading: false,
     error: null,
-    success: null,
   },
 
 }
@@ -21,61 +21,37 @@ export const createFavoritesSlice: StateCreator<
     ...initialState,
     addToFavorites: async (article: any) => {
       const favorites = get().favorites;
-      set(() => ({
-        favorites: {
-          ...favorites,
-          error: null,
-          success: null,
-        }
-      }));
-
       try {
         const response = await api.favoritesService.addToFavorites(article);
-        if (response.status === 201) {
+        if (response?.status === 201) {
           set(() => ({
             favorites: {
               ...favorites,
               data: [...favorites.data, response.data],
-              success: "Successfully added to favorites!"
             }
           }));
+          eventEmitter.emit('success', "Successfully added to favorites!")
         }
       } catch (error: any) {
-        set(() => ({
-          favorites: {
-            ...favorites,
-            error,
-          }
-        }));
+        eventEmitter.emit('error', error.message)
       }
     },
     removeFromFavorites: async (id: number, category: string) => {
       const favorites = get().favorites;
-      set(() => ({
-        favorites: {
-          ...favorites,
-          error: null,
-          success: null,
-        }
-      }));
+
       try {
         const response = await api.favoritesService.removeFromFavorites(id, category);
-        if (response.status === 201) {
+        if (response?.status === 201) {
           set(() => ({
             favorites: {
               ...favorites,
               data: favorites.data.filter((item) => item.id !== id),
-              success: "Successfully removed from favorites!"
             }
           }));
+          eventEmitter.emit('success', "Successfully removed from favorites!")
         }
       } catch (error: any) {
-        set(() => ({
-          favorites: {
-            ...favorites,
-            error,
-          }
-        }));
+        eventEmitter.emit('error', error.message)
       }
     },
     getFavorites: async () => {
@@ -90,11 +66,11 @@ export const createFavoritesSlice: StateCreator<
       }));
       try {
         const response = await api.favoritesService.getFavorites();
-        if (response.status === 200) {
+        if (response?.status === 200) {
           set(() => ({
             favorites: {
               ...favorites,
-              data: response.data,
+              data: response?.data,
               loading: false,
             }
           }));
@@ -104,7 +80,7 @@ export const createFavoritesSlice: StateCreator<
           favorites: {
             ...favorites,
             loading: false,
-            error,
+            error: error.message,
           }
         }));
       }

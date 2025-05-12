@@ -32,7 +32,7 @@ function InfiniteScroll({
     }
   };
 
-  if (loading && data.length === 0) {
+  if ((loading && data.length === 0) || error) {
     return (
       <div className="flex flex-wrap justify-center gap-0">
         <div className="w-10/12 text-red-600 font-light text-xl my-[50px] mb-5">{title}</div>
@@ -40,9 +40,7 @@ function InfiniteScroll({
       </div>
     );
   }
-  if (error) {
-    return <Error message={error} />;
-  }
+
   return (
     data.length > 0 && (
       <InfiniteScrollComponent

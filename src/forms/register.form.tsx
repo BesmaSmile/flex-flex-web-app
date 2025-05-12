@@ -11,6 +11,8 @@ import { useStore } from "@/store";
 
 function RegisterForm() {
   const { register: reg } = useStore();
+  const submitting = useStore((state) => state.user.submitting);
+
   const {
     register,
     handleSubmit,
@@ -75,7 +77,7 @@ function RegisterForm() {
         />
       </div>
       <div className="w-[70%] flex flex-col mt-4">
-        <Button type="submit" label="Sign up" variant="primary" fullWidth />
+        <Button type="submit" label="Sign up" variant="primary" fullWidth submitting={submitting} />
         <div className="mt-4">
           Already registered to
           {' '}

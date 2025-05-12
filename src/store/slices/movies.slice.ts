@@ -59,7 +59,7 @@ export const createMoviesSlice: StateCreator<
       }));
       try {
         const response = await api.moviesService.getUpcomingMovies(page);
-        if (response.status === 200) {
+        if (response?.status === 200) {
           set(() => ({
             upcomingMovies: {
               ...upcomingMovies,
@@ -73,7 +73,7 @@ export const createMoviesSlice: StateCreator<
           upcomingMovies: {
             ...upcomingMovies,
             loading: false,
-            error,
+            error: error.message,
           }
         }));
       }
@@ -88,7 +88,7 @@ export const createMoviesSlice: StateCreator<
       }));
       try {
         const response = await api.moviesService.getPopularMovies(page);
-        if (response.status === 200) {
+        if (response?.status === 200) {
           set(() => ({
             popularMovies: {
               loading: false,
@@ -103,7 +103,7 @@ export const createMoviesSlice: StateCreator<
           popularMovies: {
             ...popularMovies,
             loading: false,
-            error,
+            error: error.message,
           }
         }));
       }
@@ -119,7 +119,7 @@ export const createMoviesSlice: StateCreator<
       }));
       try {
         const response = await api.moviesService.getPopularMovies(nextPage);
-        if (response.status === 200) {
+        if (response?.status === 200) {
           set(() => ({
             infinitePopularMovies: {
               loading: false,
@@ -137,7 +137,7 @@ export const createMoviesSlice: StateCreator<
           infinitePopularMovies: {
             ...infinitePopularMovies,
             loading: false,
-            error,
+            error: error.message,
           }
         }));
       }
@@ -153,7 +153,7 @@ export const createMoviesSlice: StateCreator<
       }));
       try {
         const response = await api.moviesService.getMovieDetails(id);
-        if (response.status === 200) {
+        if (response?.status === 200) {
           set(() => ({
             movieDetails: {
               ...movieDetails,
@@ -167,7 +167,7 @@ export const createMoviesSlice: StateCreator<
           movieDetails: {
             ...movieDetails,
             loading: false,
-            error,
+            error: error.message,
           }
         }));
       }
@@ -187,7 +187,7 @@ export const createMoviesSlice: StateCreator<
       }));
       try {
         const response = await api.moviesService.searchMovies(page, query);
-        if (response.status === 200) {
+        if (response?.status === 200) {
           set(() => ({
             moviesSearchResults: {
               ...moviesSearchResults,
@@ -204,7 +204,7 @@ export const createMoviesSlice: StateCreator<
           moviesSearchResults: {
             ...moviesSearchResults,
             loading: false,
-            error,
+            error: error.message,
           }
         }));
       }

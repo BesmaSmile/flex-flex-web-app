@@ -2,6 +2,7 @@ import { StateCreator } from "zustand"
 import { AppSlice, UserSlice } from "@/store/types"
 import api from "@/services/api";
 import { LoginType, RegisterType } from "@/types";
+import { eventEmitter } from "@/utils";
 
 const initialState = {
   auth: {
@@ -11,7 +12,7 @@ const initialState = {
   user: {
     data: null,
     loading: false,
-    error: null,
+    submitting: false,
   }
 }
 export const createUserSlice: StateCreator<
@@ -25,63 +26,62 @@ export const createUserSlice: StateCreator<
     login: async (payload: LoginType) => {
       set(() => ({
         user: {
-          data: initialState.user.data,
-          loading: true,
-          error: null,
+          ...initialState.user,
+          submitting: true,
         }
       }));
       try {
         const response = await api.userService.login(payload);
-        if (response.status === 201) {
+        if (response?.status === 201) {
           set(() => ({
             auth: {
               token: response.data.token,
               isAuthenticated: true,
             },
             user: {
+              ...initialState.user,
               data: response.data.user,
-              loading: false,
-              error: null,
+              submitting: false,
             }
           }));
         }
       } catch (error: any) {
         set(() => ({
           user: {
-            data: initialState.user.data,
-            loading: false,
-            error,
+            ...initialState.user,
+            submitting: false,
           }
         }));
+        eventEmitter.emit('error', error.message)
       }
     },
     register: async (payload: RegisterType) => {
       set(() => ({
         user: {
-          data: initialState.user.data,
-          loading: true,
-          error: null,
+          ...initialState.user,
+          submitting: true,
         }
       }));
       try {
         const response = await api.userService.register(payload);
-        if (response.status === 200) {
+        if (response?.status === 201) {
           set(() => ({
             user: {
+              ...initialState.user,
               data: response.data,
-              loading: false,
-              error: null,
+              submitting: false,
             }
           }));
+          eventEmitter.emit('success', "Successfully registered! Please login.")
         }
       } catch (error: any) {
         set(() => ({
           user: {
-            data: initialState.user.data,
-            loading: false,
-            error,
+            ...initialState.user,
+            submitting: false,
           }
         }));
+        eventEmitter.emit('error', error.message)
       }
     },
     logout: async () => {
@@ -92,16 +92,17 @@ export const createUserSlice: StateCreator<
     getProfile: async () => {
       set(() => ({
         user: {
-          data: initialState.user.data,
+          ...initialState.user,
           loading: true,
           error: null,
         }
       }));
       try {
         const response = await api.userService.getInfos();
-        if (response.status === 200) {
+        if (response?.status === 200) {
           set(() => ({
             user: {
+              ...initialState.user,
               data: response.data,
               loading: false,
               error: null,
@@ -111,9 +112,9 @@ export const createUserSlice: StateCreator<
       } catch (error: any) {
         set(() => ({
           user: {
-            data: initialState.user.data,
+            ...initialState.user,
             loading: false,
-            error,
+            error
           }
         }));
       }
