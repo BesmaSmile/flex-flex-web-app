@@ -11,7 +11,7 @@ import { useStore } from "@/store";
 
 function LoginForm() {
   const login = useStore((state) => state.login);
-
+  const submitting = useStore((state) => state.user.submitting);
   const {
     register,
     handleSubmit,
@@ -52,7 +52,7 @@ function LoginForm() {
         />
       </div>
       <div className="w-[70%] flex flex-col mt-4">
-        <Button className="hover:bg-blue-700" type="submit" label="Sign in" variant="primary" fullWidth />
+        <Button submitting={submitting} className="hover:bg-blue-700" type="submit" label="Sign in" variant="primary" fullWidth />
         <div className="mt-4">
           New to
           {' '}

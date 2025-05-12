@@ -59,7 +59,7 @@ export const createTvShowsSlice: StateCreator<
       }));
       try {
         const response = await api.moviesService.getUpcomingMovies(page);
-        if (response.status === 200) {
+        if (response?.status === 200) {
           set(() => ({
             upcomingMovies: {
               ...upcomingMovies,
@@ -73,7 +73,7 @@ export const createTvShowsSlice: StateCreator<
           upcomingMovies: {
             ...upcomingMovies,
             loading: false,
-            error,
+            error: error.message,
           }
         }));
       }
@@ -88,7 +88,7 @@ export const createTvShowsSlice: StateCreator<
       }));
       try {
         const response = await api.tvShowsService.getPopularTvShows(page);
-        if (response.status === 200) {
+        if (response?.status === 200) {
           set(() => ({
             popularTvShows: {
               loading: false,
@@ -103,7 +103,7 @@ export const createTvShowsSlice: StateCreator<
           popularTvShows: {
             ...popularTvShows,
             loading: false,
-            error,
+            error: error.message,
           }
         }));
       }
@@ -119,7 +119,7 @@ export const createTvShowsSlice: StateCreator<
       }));
       try {
         const response = await api.tvShowsService.getPopularTvShows(nextPage);
-        if (response.status === 200) {
+        if (response?.status === 200) {
           set(() => ({
             infimitePopularTvShows: {
               loading: false,
@@ -137,7 +137,7 @@ export const createTvShowsSlice: StateCreator<
           infimitePopularTvShows: {
             ...infimitePopularTvShows,
             loading: false,
-            error,
+            error: error.message,
           }
         }));
       }
@@ -153,7 +153,7 @@ export const createTvShowsSlice: StateCreator<
       }));
       try {
         const response = await api.tvShowsService.getTvShowDetails(id);
-        if (response.status === 200) {
+        if (response?.status === 200) {
           set(() => ({
             tvShowDetails: {
               ...tvShowDetails,
@@ -167,7 +167,7 @@ export const createTvShowsSlice: StateCreator<
           tvShowDetails: {
             ...tvShowDetails,
             loading: false,
-            error,
+            error: error.message,
           }
         }));
       }
@@ -187,7 +187,7 @@ export const createTvShowsSlice: StateCreator<
       }));
       try {
         const response = await api.tvShowsService.searchTvShows(page, query);
-        if (response.status === 200) {
+        if (response?.status === 200) {
           set(() => ({
             tvShowsSearchResults: {
               ...tvShowsSearchResults,
@@ -204,7 +204,7 @@ export const createTvShowsSlice: StateCreator<
           tvShowsSearchResults: {
             ...tvShowsSearchResults,
             loading: false,
-            error,
+            error: error.message,
           }
         }));
       }

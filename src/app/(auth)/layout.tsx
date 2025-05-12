@@ -2,6 +2,7 @@
 import { useRouter } from 'next/navigation'
 import { useEffect } from "react";
 import { useStore } from "@/store";
+import { useEventListener } from '@/hooks';
 
 export default function AuthRedirect({
   children,
@@ -11,6 +12,9 @@ export default function AuthRedirect({
   const router = useRouter();
   const isAuthenticated = useStore((state) => state.auth.isAuthenticated);
   const hasHydrated = useStore((state) => state.hasHydrated);
+
+  useEventListener();
+
   useEffect(() => {
     if (!hasHydrated) return;
     if (isAuthenticated) {
